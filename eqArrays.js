@@ -2,9 +2,9 @@
 const eqArrays = function(actual, expected) {
   for (let i = 0; i < actual.length; i++) {
     if (actual[i] === expected[i]) {
-      return true;
+      console.log(`Assertion passed: ${actual[i]} === ${expected[i]}`);
     } else {
-      return false;
+      console.assert(actual[i] === expected[i], (`${actual[i]} !== ${expected[i]}`));
     }
   }
 };
@@ -17,6 +17,8 @@ const assertEqual = function(result, boolean) {
   }
 };
 
+// doesn't work because the eqArrays don't come up with boolean
+// refer to assertArraysEqual
 
 // TEST CODE
 eqArrays([1, 2, 3], [1, 2, 3]) // => true

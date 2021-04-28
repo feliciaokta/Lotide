@@ -1,15 +1,14 @@
 // FUNCTION IMPLEMENTATION
 const eqArrays = function(actual, expected) {
   for (let i = 0; i < actual.length; i++) {
-    if (actual[i] === expected[i]) {
-      return true;
-    } else {
+    if (actual[i] !== expected[i]) {
       return false;
     }
   }
+  return true;
 };
 
-const assertEqual = function(result, boolean) {
+const assertArraysEqual = function(result, boolean) {
   if (result === boolean) {
     console.log("PASS");
   } else {
@@ -26,3 +25,4 @@ eqArrays(["1", "2", "3"], ["1", "2", "3"]) // => true
 eqArrays(["1", "2", "3"], ["1", "2", 3]) // => false
 
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
+
