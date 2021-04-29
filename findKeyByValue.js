@@ -21,7 +21,7 @@ const findKeyByValue = function(obj, value) {
     if (obj[key] === value) {
       answer = key;
       } else {
-        answer = null;
+        answer = undefined;
       }
     }
   return answer;
