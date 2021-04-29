@@ -49,3 +49,18 @@ const letterPositions = function(sentence) {
 };
 
 console.log(letterPositions("This is exercise"));
+
+
+// Push an item into an array inside an object
+// const obj = {
+//   a: [1, 2, 3],
+//   b: [4, 5, 6],
+//   c: [7, 8, 9]
+// }
+// const add = function (key) {
+//   obj[key].push(6);
+//   obj[key].push(7);
+// };
+// add("b");
+// console.log(obj);
+// console.log(obj["a"][1]);
