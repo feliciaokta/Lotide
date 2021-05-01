@@ -1,12 +1,12 @@
-// const eqArrays = function(actual, expected) {
-//   for (let i = 0; i < actual.length; i++) {
-//     if (actual[i] === expected[i]) {
-//       console.log(`Assertion passed: ${actual[i]} === ${expected[i]}`);
-//     } else {
-//       console.assert(actual[i] === expected[i], (`${actual[i]} !== ${expected[i]}`));
-//     }
-//   }
-// };
+const eqArrays = function(actual, expected) {
+  for (let i = 0; i < actual.length; i++) {
+    if (actual[i] === expected[i]) {
+      console.log(`Assertion passed: ${actual[i]} === ${expected[i]}`);
+    } else {
+      console.assert(actual[i] === expected[i], (`${actual[i]} !== ${expected[i]}`));
+    }
+  }
+};
 
 
 // const assertEqual = function(result, boolean) {
@@ -40,15 +40,19 @@ const eqObjects = function(object1, object2) {
   let keys2 = Object.keys(object2);
   let obj1length = keys1.length;
   let obj2length = keys2.length;
+  let isObj1ValueArray = keys1.isArray;
+  let isObj2ValueArray = keys1.isArray;
   // loop "for value in every object"??
   if (obj1length === obj2length) {
-    if (object1[keys1] === object2[keys2]) {
+    if (isObj1ValueArray === true && isObj2ValueArray === true) {
+      answer = eqArrays(object1, object2);
+      // this isArray doesn't work
+    } else if (object1[keys1] === object2[keys2]) {
       answer = true;
-      // not sure where to put Array.isArray? 
-      } else if (object1[keys1] !== object2[keys2]) {
-        answer = false;
-     }
-      } else {
+    } else if (object1[keys1] !== object2[keys2]) {
+      answer = false;
+    }
+  } else {
       answer = false;
     }
     return answer;
@@ -67,7 +71,7 @@ const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };
 console.log(eqObjects(cd, dc)); // => true
 
-// const cd2 = { c: "1", d: ["2", 3, 4] };
-// console.log(eqObjects(cd, cd2)); // => false
+const cd2 = { c: "1", d: ["2", 3, 4] };
+console.log(eqObjects(cd, cd2)); // => false
 
 //http://adripofjavascript.com/blog/drips/object-equality-in-javascript.html
