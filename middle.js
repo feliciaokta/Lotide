@@ -1,19 +1,22 @@
-const eqArrays = function(actual, expected) {
-  for (let i = 0; i < actual.length; i++) {
-    if (actual[i] !== expected[i]) {
-      return false;
-    }
-  }
-  return true;
-};
+// const eqArrays = function(actual, expected) {
+//   for (let i = 0; i < actual.length; i++) {
+//     if (actual[i] !== expected[i]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
 
-const assertArraysEqual = function(result, boolean) {
-  if (result === boolean) {
-    console.log("PASS");
-  } else {
-    console.log("FAIL");
-  }
-};
+// const assertArraysEqual = function(result, boolean) {
+//   if (result === boolean) {
+//     console.log("PASS");
+//   } else {
+//     console.log("FAIL");
+//   }
+// };
+
+const eqArrays = require('./eqArrays')
+const assertArraysEqual = require('./assertArraysEqual');
 
 // median function? No, we don't need to sort
 const middle = function (arr) {
@@ -31,10 +34,13 @@ const middle = function (arr) {
   return answer;
 };
 
-// TEST
-middle([1]) // => []
-middle([1, 2]) // => []
-middle([1, 2, 3]) // => [2]
-middle([1, 2, 3, 4, 5]) // => [3]
-middle([1, 2, 3, 4]) // => [2, 3]
-middle([1, 2, 3, 4, 5, 6]) // => [3, 4]
+// // TEST
+// middle([1]) // => []
+// middle([1, 2]) // => []
+// middle([1, 2, 3]) // => [2]
+// middle([1, 2, 3, 4, 5]) // => [3]
+// middle([1, 2, 3, 4]) // => [2, 3]
+// middle([1, 2, 3, 4, 5, 6]) // => [3, 4]
+
+
+module.exports = eqArrays, assertArraysEqual;
