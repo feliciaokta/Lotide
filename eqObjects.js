@@ -24,9 +24,6 @@ const eqObjects = function(object1, object2) {
   let keys2 = Object.keys(object2);
   let obj1length = keys1.length;
   let obj2length = keys2.length;
-  // let isObj1ValueArray = Array.isArray(keys1);
-  // let isObj2ValueArray = Array.isArray(keys2);
-  // loop "for value in every object"??
   if (obj1length === obj2length) {
     for (let key in object1) {
       let val1 = object1[key];
