@@ -63,6 +63,3 @@ console.log("question 1 ", eqObjects(cd, dc)); // => true
 const cd2 = { c: "1", d: ["2", 3, 4] };
 console.log("question 2 ", eqObjects(cd, cd2)); // => false
 
-// const arr1 = ["2", 3];
-// const arr2 = ["2", 3, 4];
-// console.log(eqArrays(arr2, arr1));
