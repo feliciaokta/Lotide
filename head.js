@@ -7,7 +7,7 @@
 //   }
 // };
 
-const assertEqual = require('./assertEqual');
+// const assertEqual = require('./assertEqual');
 
 const head = function (arrayNum) {
   return arrayNum[0];
@@ -17,4 +17,4 @@ const head = function (arrayNum) {
 // assertEqual(head([5,6,7]), 7);
 // assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
 
-module.exports = assertEqual;
+module.exports = head;
