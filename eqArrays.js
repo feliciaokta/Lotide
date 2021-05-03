@@ -1,4 +1,7 @@
 // FUNCTION IMPLEMENTATION
+
+const assertEqual = require('./assertEqual');
+
 const eqArrays = function(actual, expected) {
   for (let i = 0; i < actual.length; i++) {
     if (actual[i] === expected[i]) {
@@ -9,13 +12,13 @@ const eqArrays = function(actual, expected) {
   }
 };
 
-const assertEqual = function(result, boolean) {
-  if (result === boolean) {
-    console.log("PASS");
-  } else {
-    console.log("FAIL");
-  }
-};
+// const assertEqual = function(result, boolean) {
+//   if (result === boolean) {
+//     console.log("PASS");
+//   } else {
+//     console.log("FAIL");
+//   }
+// };
 
 // doesn't work because the eqArrays don't come up with boolean
 // refer to assertArraysEqual
@@ -28,3 +31,6 @@ eqArrays(["1", "2", "3"], ["1", "2", "3"]) // => true
 eqArrays(["1", "2", "3"], ["1", "2", 3]) // => false
 
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
+
+
+module.exports = assertEqual;
