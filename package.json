@@ -1,8 +1,8 @@
 {
-  "name": "lotide",
+  "name": "@feliciaokta/lotide",
   "version": "1.0.0",
-  "description": "LLW1",
-  "main": "assertArraysEqual.js",
+  "description": "Lighthouse Labs Lotide Week 1: functions, arrays, objects",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
